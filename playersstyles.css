@@ -1,0 +1,68 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    /* Красно-черный градиентный фон страницы */
+    background: linear-gradient(to right bottom, #C8102E, #000); /* Градиент от красного к черному */
+    color: #fff; /* Белый текст */
+}
+
+.team-section {
+    max-width: 1200px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.players-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Ограничиваем количество карточек в ряду четырьмя */
+.players-container .player-card:nth-child(4n+1) {
+    margin-left: 0;
+}
+
+.player-card {
+    width: calc((100% / 4) - 22.5px); /* Рассчитываем ширину карточки, учитывая отступы */
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    /* Красно-черный градиентный фон карточек */
+    background: linear-gradient(to right top, #C8102E, #222); /* Градиент от красного к темно-серому */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.player-card:hover {
+    transform: scale(1.05);
+}
+
+.player-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.player-info {
+    padding: 10px;
+}
+
+.player-name {
+    font-size: 18px;
+    color: #fff; /* Белый текст */
+}
+
+.player-number,
+.player-position {
+    font-size: 14px;
+    color: #ffffff; /* Белый цвет текста */
+}

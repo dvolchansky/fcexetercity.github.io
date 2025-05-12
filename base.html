@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ФК Эксетер Сити</title>
+    <!-- Подключение стилей -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Логотип команды -->
+<header>
+    <img src="images%20homepage/Exeter City Logo.png" alt="Логотип ФК Эксетер Сити" style="width: 10%; margin-bottom: 15px;">
+</header>
+
+<!-- Навигационная панель -->
+<nav>
+    <ul>
+        <li><a href="#home" class="nav-link">Главная</a></li>
+        <li><a href="#news" class="nav-link">Новости</a></li>
+        <li><a href="#team" class="nav-link">Команда</a></li>
+        <li><a href="#statisticsteam" class="nav-link">Статистика</a></li>
+        <li><a href="#gallery" class="nav-link">Галерея</a></li>
+        <li><a href="#contacts" class="nav-link">Контакты</a></li>
+    </ul>
+</nav>
+
+<!-- Разделы -->
+<section id="home" class="content active">
+    <h1>Добро пожаловать на территорию любительского футбольного клуба Эксетер Сити!</h1>
+    <p>Мы рады приветствовать вас на официальном сайте нашей команды. Здесь вы сможете узнать больше о нас, наших матчах и новостях. </p>
+    <p>ФК Эксетер Сити - любительский футбольный клуб с богатой историей и преданными болельщиками. Мы всегда стремится к успеху как на поле, так и за его пределами.</p>
+</section>
+
+
+
+<section id="team" class="content hidden">
+    <h1>Эксетер Сити</h1>
+    <p>Наша команда состоит из молодых футболистов, стремящихся вместе с партнерами по команде добиться успехов на футбольной арене!</p>
+    <p><a href="../players/players_card.html">Посмотреть состав команды</a></p>
+</section>
+
+
+<section id="statisticsteam" class="content hidden">
+    <h1>Статистика команды и игроков</h1>
+    <p>Здесь вы сможете следить за статистикой как команды, так и отдельно взятых игроков!</p>
+    <p><a href="../statistics/statisticsteam.html">Турнирная таблица Чемпионшипа</a></p>
+    <p><a href="../statistics/statisticsplayers.html">Cтатистика игроков</a></p>
+</section>
+
+
+<section id="news" class="content hidden">
+    <h1>Новости</h1>
+    <p>Кликай по ссылке ниже и переходи в наш телеграм-канал! Там тебя будет ждать все от новостей до кружочков с матчей!</p>
+    <div class="social-links">
+        <a href="https://t.me/fcexetercity" class="social-link telegram" target="_blank">
+            <i class="fab fa-telegram"></i>Наш телеграм-канал
+        </a>
+    </div>
+
+    <p>А вот по этой ссылке ты можешь смело переходить и быть в курсе последних новостей чемпионата Англии!</p>
+    <div class="social-links">
+        <a href="https://vk.com/amateur_league_england" class="social-link vk" target="_blank">
+            <i class="fab fa-vk"></i>Новости английского чемпионата
+        </a>
+    </div>
+</section>
+
+
+<section id="gallery" class="content hidden">
+    <h1>Фотогалерея</h1>
+    <p>Смотри лучшие моменты команды на фотокарточках!</p>
+
+    <div class="social-links">
+        <a href="https://t.me/fcexetercity" class="social-link telegram" target="_blank">
+            <i class="fab fa-telegram"></i>Телеграм-канал
+        </a>
+    </div>
+</section>
+
+
+
+<section id="contacts" class="content hidden">
+    <h1>Контактная информация</h1>
+    <p><strong>Адрес:</strong> г. Москва, Варшавское шоссе, д. 14, стр. 14, Стадион Труд</p>
+    <p><strong>Руководитель команды:</strong> Лосев Илья</p>
+    <p><strong>Телефон:</strong> 8-925-886-00-43</p>
+    <p><strong>Email:</strong> info@exetercityfc.com</p>
+    <p><a href="https://forms.yandex.ru/u/6807693a493639807d3a8e31/">Оставьте свое сообщение и мы обязательно на него ответим!</a></p>
+</section>
+
+
+<!-- Нижний колонтитул -->
+<footer>
+    <p>© 2025 ФК Эксетер Сити. Все права защищены.</p>
+</footer>
+
+
+
+<script>
+    // JavaScript для переключения между разделами
+    document.addEventListener('DOMContentLoaded', function() {
+        // Получаем все ссылки навигации
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        // Получаем все секции контента
+        const contentSections = document.querySelectorAll('.content');
+
+        // Обработчик клика для каждой ссылки
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // Скрываем все секции
+                contentSections.forEach(section => {
+                    section.classList.add('hidden');
+                    section.classList.remove('active');
+                });
+
+                // Показываем выбранную секцию
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                if (targetSection) {
+                    targetSection.classList.remove('hidden');
+                    targetSection.classList.add('active');
+                }
+            });
+        });
+
+        // Обработка хэша в URL при загрузке страницы
+        const currentHash = window.location.hash;
+        if (currentHash) {
+            const targetSection = document.querySelector(currentHash);
+            if (targetSection && targetSection.classList.contains('content')) {
+                // Скрываем все секции
+                contentSections.forEach(section => {
+                    section.classList.add('hidden');
+                    section.classList.remove('active');
+                });
+
+                // Показываем нужную секцию
+                targetSection.classList.remove('hidden');
+                targetSection.classList.add('active');
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

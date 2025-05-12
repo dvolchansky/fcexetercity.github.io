@@ -1,0 +1,62 @@
+/* Основной стиль для тела документа */
+body {
+    background-color: black; /* Основной цвет фона */
+    color: white; /* Цвет текста */
+}
+
+/* Градиентный фон для заголовков */
+header,
+footer {
+    background: linear-gradient(to right, red, black); /* Чередование красного и черного цветов */
+    padding: 10px;
+    text-align: center;
+}
+
+/* Стилизация навигационной панели */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333; /* Темно-серый фон для навигационного меню */
+}
+
+nav li {
+    float: left;
+}
+
+nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #111; /* Темнее серый фон при наведении */
+}
+
+/* Основная область содержимого *//* Стилизация для контента */
+.content {
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+main {
+    padding: 20px;
+    line-height: 1.5em;
+}
+
+/* Секция нижнего колонтитула */
+footer p {
+    margin: 0;
+}
+

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Команда</title>
+
+    <style>
+        /* Основные стили для карточек игроков */
+        .team-section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .players-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .player-card {
+            width: 200px;
+            height: 280px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .player-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .player-card:hover .player-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .player-card-front, .player-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .player-card-front {
+            background-color: #C8102E;
+        }
+
+        .player-card-back {
+            background-color: #333;
+            color: white;
+            transform: rotateY(180deg);
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .player-image {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .player-info {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .player-name {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+
+        .player-number {
+            font-weight: bold;
+            font-size: 16px;
+            margin: 5px 0;
+        }
+
+        .player-position {
+            font-style: italic;
+            margin: 5px 0;
+        }
+
+        .player-stats {
+            margin-top: 10px;
+        }
+
+        .player-stats p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+
+    </style>
+    <link rel="stylesheet" href="playersstyles.css">
+</head>
+<body>
+<section class="team-section">
+    <h2>Состав ФК Эксетер Сити</h2>
+
+    <!-- Вратари -->
+    <div class="players-container goalkeepers">
+        <div class="player-card">
+            <div class="player-card-inner">
+                <div class="player-card-front">
+                    <img src="images/Vendin.jpg" alt="Игрок 1" class="player-image">
+                    <div class="player-info">
+                        <h3 class="player-name">Вендин Александр</h3>
+                        <p class="player-number">№1</p>
+                        <p class="player-position">Вратарь</p>
+                    </div>
+                </div>
+                <div class="player-card-back">
+                    <div class="player-stats">
+                        <p><strong>Дата рождения:</strong> 05.03.1998</p>
+                        <p><strong>Рабочая нога:</strong> Правая</p>
+                        <p><strong>Рост:</strong> 180 см</p>
+                        <p><strong>Страна:</strong> Россия</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="players-container defenders">
+        <div class="player-card">
+            <div class="player-card-inner">
+                <div class="player-card-front">
+                    <img src="images/Dobagov.jpg" alt="Игрок 2" class="player-image">
+                    <div class="player-info">
+                        <h3 class="player-name">Добагов Дамир</h3>
+                        <p class="player-number">№21</p>
+                        <p class="player-position">Защитник</p>
+                    </div>
+                </div>
+                <div class="player-card-back">
+                    <div class="player-stats">
+                        <p><strong>Дата рождения:</strong> 19.06.2004</p>
+                        <p><strong>Рабочая нога:</strong> Правая</p>
+                        <p><strong>Рост:</strong> 183 см</p>
+                        <p><strong>Страна:</strong> Россия</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="players-container defenders">
+        <div class="player-card">
+            <div class="player-card-inner">
+                <div class="player-card-front">
+                    <img src="images/Isakov.jpg" alt="Игрок 3" class="player-image">
+                    <div class="player-info">
+                        <h3 class="player-name">Исаков Псабыда</h3>
+                        <p class="player-number">№97</p>
+                        <p class="player-position">Защитник</p>
+                    </div>
+                </div>
+                <div class="player-card-back">
+                    <div class="player-stats">
+                        <p><strong>Дата рождения:</strong> 27.07.2004</p>
+                        <p><strong>Рабочая нога:</strong> Правая</p>
+                        <p><strong>Рост:</strong> 187 см</p>
+                        <p><strong>Страна:</strong> Россия</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="players-container defenders">
+        <div class="player-card">
+            <div class="player-card-inner">
+                <div class="player-card-front">
+                    <img src="images/Losev.jpg" alt="Игрок 4" class="player-image">
+                    <div class="player-info">
+                        <h3 class="player-name">Лосев Илья</h3>
+                        <p class="player-number">№10</p>
+                        <p class="player-position">Защитник</p>
+                    </div>
+                </div>
+                <div class="player-card-back">
+                    <div class="player-stats">
+                        <p><strong>Дата рождения:</strong> 11.05.2004</p>
+                        <p><strong>Рабочая нога:</strong> Правая</p>
+                        <p><strong>Рост:</strong> 188 см</p>
+                        <p><strong>Страна:</strong> Россия</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="players-container defenders">
+        <div class="player-card">
+            <div class="player-card-inner">
+                <div class="player-card-front">
+                    <img src="images/Volkov.jpg" alt="Игрок 5" class="player-image">
+                    <div class="player-info">
+                        <h3 class="player-name">Волков Дмитрий</h3>
+                        <p class="player-number">№45</p>
+                        <p class="player-position">Защитник</p>
+                    </div>
+                </div>
+                <div class="player-card-back">
+                    <div class="player-stats">
+                        <p><strong>Дата рождения:</strong> 05.11.2006</p>
+                        <p><strong>Рабочая нога:</strong> Правая</p>
+                        <p><strong>Рост:</strong> 193 см</p>
+                        <p><strong>Страна:</strong> Россия</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="players-container defenders">
+        <div class="player-card">
+            <div class="player-card-inner">
+                <div class="player-card-front">
+                    <img src="images/Satimbaev.jpg" alt="Игрок 6" class="player-image">
+                    <div class="player-info">
+                        <h3 class="player-name">Сатимбаев Нурлан</h3>
+                        <p class="player-number">№22</p>
+                        <p class="player-position">Защитник</p>
+                    </div>
+                </div>
+                <div class="player-card-back">
+                    <div class="player-stats">
+                        <p><strong>Дата рождения:</strong> 07.04.1994</p>
+                        <p><strong>Рабочая нога:</strong> Правая</p>
+                        <p><strong>Рост:</strong> 190 см</p>
+                        <p><strong>Страна:</strong> Казахстан</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="players-container defenders">
+        <div class="player-card">
+            <div class="player-card-inner">
+                <div class="player-card-front">
+                    <img src="images/Ankalaev.jpg" alt="Игрок 7" class="player-image">
+                    <div class="player-info">
+                        <h3 class="player-name">Акалаев Айдамир</h3>
+                        <p class="player-number">№69</p>
+                        <p class="player-position">Защитник</p>
+                    </div>
+                </div>
+                <div class="player-card-back">
+                    <div class="player-stats">
+                        <p><strong>Дата рождения:</strong> 03.11.2006</p>
+                        <p><strong>Рабочая нога:</strong> Правая</p>
+                        <p><strong>Рост:</strong> 178 см</p>
+                        <p><strong>Страна:</strong> Россия</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Категория полузащитников -->
+
+    <div class="players-container midfielders">
+            <div class="player-card">
+                <div class="player-card-inner">
+                    <div class="player-card-front">
+                        <img src="images/Funtov.jpg" alt="Игрок 8" class="player-image">
+                        <div class="player-info">
+                            <h3 class="player-name">Фунтов Владимир</h3>
+                            <p class="player-number">№11</p>
+                            <p class="player-position">Полузащитник</p>
+                        </div>
+                    </div>
+                    <div class="player-card-back">
+                        <div class="player-stats">
+                            <p><strong>Дата рождения:</strong> 02.09.2004</p>
+                            <p><strong>Рабочая нога:</strong> Левая</p>
+                            <p><strong>Рост:</strong> 185 см</p>
+                            <p><strong>Страна:</strong> Россия</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <div class="players-container midfielders">
+        <div class="player-card">
+            <div class="player-card-inner">
+                <div class="player-card-front">
+                    <img src="images/Razyapov.jpg" alt="Игрок 9" class="player-image">
+                    <div class="player-info">
+                        <h3 class="player-name">Разяпов Булат</h3>
+                        <p class="player-number">№27</p>
+                        <p class="player-position">Полузащитник</p>
+                    </div>
+                </div>
+                <div class="player-card-back">
+                    <div class="player-stats">
+                        <p><strong>Дата рождения:</strong> 22.12.2002</p>
+                        <p><strong>Рабочая нога:</strong> Левая</p>
+                        <p><strong>Рост:</strong> 187 см</p>
+                        <p><strong>Страна:</strong> Россия</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Категория нападающих -->
+
+    <div class="players-container forwards">
+        <div class="player-card">
+            <div class="player-card-inner">
+                <div class="player-card-front">
+                    <img src="images/Azymov.jpg" alt="Игрок 10" class="player-image">
+                    <div class="player-info">
+                        <h3 class="player-name">Азымов Ильяз</h3>
+                        <p class="player-number">№17</p>
+                        <p class="player-position">Нападающий</p>
+                    </div>
+                </div>
+                <div class="player-card-back">
+                    <div class="player-stats">
+                        <p><strong>Дата рождения:</strong> 23.10.2004</p>
+                        <p><strong>Рабочая нога:</strong> Правая</p>
+                        <p><strong>Рост:</strong> 183 см</p>
+                        <p><strong>Страна:</strong> Россия</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="players-container forwards">
+        <div class="player-card">
+            <div class="player-card-inner">
+                <div class="player-card-front">
+                    <img src="images/Zabalotny.jpg" alt="Игрок 11" class="player-image">
+                    <div class="player-info">
+                        <h3 class="player-name">Заболотный Константин</h3>
+                        <p class="player-number">№7</p>
+                        <p class="player-position">Нападающий</p>
+                    </div>
+                </div>
+                <div class="player-card-back">
+                    <div class="player-stats">
+                        <p><strong>Дата рождения:</strong> 20.05.2006</p>
+                        <p><strong>Рабочая нога:</strong> Правая</p>
+                        <p><strong>Рост:</strong> 179 см</p>
+                        <p><strong>Страна:</strong> Россия</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+</body>
+</html>
